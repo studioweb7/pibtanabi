@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIB Tanabi | Primeira Igreja Batista de Tanabi - SP</title>
+    <meta name="description" content="Uma igreja para pertencer, que não negocia seus valores. Cultos, ministérios e eventos em Tanabi-SP.">
+    <meta name="theme-color" content="#1e3a8a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2225%22 fill=%22%231e3a8a%22/><text x=%2250%22 y=%2268%22 font-size=%2255%22 font-family=%22Arial%22 font-weight=%22bold%22 fill=%22%23fbbf24%22 text-anchor=%22middle%22>✝</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'faith': { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b' },
+                        'gold': { 50:'#fffbeb',100:'#fef3c7',200:'#fde68a',300:'#fcd34d',400:'#fbbf24',500:'#f59e0b',600:'#d97706',700:'#b45309',800:'#92400e',900:'#78350f' },
+                        'night': { 700:'#1e293b',800:'#0f172a',900:'#020617' }
+                    },
+                    fontFamily: {
+                        'display':['"Playfair Display"','serif'],
+                        'body':['Inter','sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: { '0%,100%':{transform:'translateY(0)'}, '50%':{transform:'translateY(-15px)'} },
+                        glow: { '0%,100%':{boxShadow:'0 0 20px rgba(251,191,36,0.3)'}, '50%':{boxShadow:'0 0 40px rgba(251,191,36,0.6)'} }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Church",
+        "name":"Primeira Igreja Batista de Tanabi",
+        "alternateName":"PIB Tanabi",
+        "description":"Somos uma igreja de adoradores vivos em espírito e verdade.",
+        "telephone":"+5517997125718",
+        "address":{
+            "@type":"PostalAddress",
+            "streetAddress":"Av. Gildo Savatin, 430",
+            "addressLocality":"Tanabi",
+            "addressRegion":"SP",
+            "postalCode":"15170-000",
+            "addressCountry":"BR"
+        },
+        "openingHours":"Su 20:00-22:00, Sa 09:00-17:00",
+        "sameAs":["https://www.instagram.com/pibtanabioficial/"]
+    }
+    </script>
+
+    <style>
+        *{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif}
+        h1,h2,h3,h4{font-family:'Playfair Display',serif}
+
+        .glass{background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
+        .glass-light{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.5)}
+
+        .gradient-text{background:linear-gradient(135deg,#fbbf24,#f59e0b,#b45309);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .gradient-bg{background:linear-gradient(135deg,#1e3a8a,#312e81,#4338ca);background-size:200% 200%}
+        .gold-gradient{background:linear-gradient(135deg,#fbbf24,#f59e0b,#d97706)}
+
+        .reveal{opacity:0;transform:translateY(40px);transition:all 1s cubic-bezier(0.16,1,0.3,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+        .reveal-left{opacity:0;transform:translateX(-60px);transition:all 1s cubic-bezier(0.16,1,0.3,1)}
+        .reveal-left.active{opacity:1;transform:translateX(0)}
+        .reveal-right{opacity:0;transform:translateX(60px);transition:all 1s cubic-bezier(0.16,1,0.3,1)}
+        .reveal-right.active{opacity:1;transform:translateX(0)}
+
+        #header{transition:all .4s ease}
+        #header.scrolled{background:rgba(2,6,23,0.95);backdrop-filter:blur(20px);box-shadow:0 4px 30px rgba(0,0,0,0.5)}
+
+        .card-3d{transition:transform .5s cubic-bezier(0.16,1,0.3,1),box-shadow .5s ease}
+        .card-3d:hover{transform:translateY(-10px);box-shadow:0 30px 60px rgba(30,58,138,0.3)}
+
+        .gallery-item{overflow:hidden;position:relative;cursor:pointer}
+        .gallery-item img{transition:transform .8s cubic-bezier(.4,0,.2,1)}
+        .gallery-item:hover img{transform:scale(1.1)}
+
+        ::-webkit-scrollbar{width:8px}
+        ::-webkit-scrollbar-track{background:#0f172a}
+        ::-webkit-scrollbar-thumb{background:linear-gradient(#fbbf24,#d97706);border-radius:4px}
+
+        #loader{position:fixed;inset:0;background:#020617;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s ease,visibility .6s ease}
+        #loader.hide{opacity:0;visibility:hidden}
+        .loader-cross{font-size:60px;color:#fbbf24;animation:pulse 1.5s ease-in-out infinite}
+
+        a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #fbbf24;outline-offset:3px;border-radius:8px}
+
+        #backTop{transition:all .4s ease;opacity:0;visibility:hidden;transform:translateY(20px)}
+        #backTop.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+        .accordion-content{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(0.16,1,0.3,1)}
+        .accordion-content.open{max-height:500px}
+        .accordion-item.open .accordion-icon{transform:rotate(180deg)}
+        .accordion-icon{transition:transform .4s ease}
+
+        .verse-bg{background:linear-gradient(135deg,rgba(30,58,138,0.95),rgba(49,46,129,0.95))}
+        .hero-gradient{background:linear-gradient(135deg,rgba(2,6,23,0.92) 0%,rgba(30,58,138,0.85) 50%,rgba(49,46,129,0.88) 100%)}
+
+        .float-anim{animation:float 6s ease-in-out infinite}
+
+        /* Glow botão */
+        .glow-btn{box-shadow:0 0 30px rgba(251,191,36,0.4)}
+        .glow-btn:hover{box-shadow:0 0 50px rgba(251,191,36,0.7)}
+    </style>
+</head>
+<body class="font-body text-gray-100 antialiased overflow-x-hidden bg-night-900">
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-cross">✝</div>
+        <p class="display text-2xl text-white tracking-widest mt-6 font-bold">PIB TANABI</p>
+        <p class="text-gold-400 text-xs mt-2 tracking-[0.3em] uppercase">Uma igreja para pertencer</p>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 py-3">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl gold-gradient flex items-center justify-center text-night-900 font-bold text-2xl shadow-lg group-hover:scale-110 transition-transform">
+                    ✝
+                </div>
+                <div class="leading-tight">
+                    <p class="display font-bold text-white text-lg">PIB Tanabi</p>
+                    <p class="text-[10px] uppercase tracking-[0.25em] text-gold-400 font-semibold">Desde 2003</p>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#sobre" class="text-sm font-medium text-gray-300 hover:text-gold-400 transition">Sobre</a>
+                <a href="#cultos" class="text-sm font-medium text-gray-300 hover:text-gold-400 transition">Cultos</a>
+                <a href="#ministerios" class="text-sm font-medium text-gray-300 hover:text-gold-400 transition">Ministérios</a>
+                <a href="#galeria" class="text-sm font-medium text-gray-300 hover:text-gold-400 transition">Galeria</a>
+                <a href="#contato" class="gold-gradient text-night-900 text-sm font-bold px-6 py-3 rounded-full transition shadow-lg glow-btn">Visite-nos</a>
+            </nav>
+
+            <button id="menu-btn" class="lg:hidden text-2xl text-white focus:outline-none" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden glass mx-4 mt-3 rounded-2xl">
+            <div class="px-4 py-4 space-y-1">
+                <a href="#sobre" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold-400/20 font-medium">Sobre</a>
+                <a href="#cultos" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold-400/20 font-medium">Cultos</a>
+                <a href="#ministerios" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold-400/20 font-medium">Ministérios</a>
+                <a href="#galeria" class="block px-4 py-3 rounded-xl text-gray-200 hover:bg-gold-400/20 font-medium">Galeria</a>
+                <a href="#contato" class="block px-4 py-3 rounded-xl gold-gradient text-night-900 text-center font-bold mt-2">Visite-nos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="adoracao.jpg" alt="Adoração" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl">
+                <span class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs font-semibold text-gold-300 mb-6 reveal">
+                    <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                    ✝ Uma igreja para pertencer
+                </span>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl display font-bold text-white leading-[1.05] mb-6 reveal">
+                    Adoradores em <span class="gradient-text">espírito e verdade</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl reveal leading-relaxed">
+                    Unidos em um só propósito, nossa adoração reflete o amor e a presença de Deus em tudo o que fazemos.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 reveal">
+                    <a href="#cultos" class="inline-flex items-center justify-center gap-3 gold-gradient text-night-900 font-bold px-8 py-4 rounded-full transition shadow-xl glow-btn hover:scale-105">
+                        <i class="fas fa-church"></i> Ver nossos cultos
+                    </a>
+                    <a href="https://wa.me/5517997125718?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20PIB%20Tanabi." target="_blank" class="inline-flex items-center justify-center gap-2 glass text-white font-semibold px-8 py-4 rounded-full transition hover:bg-white/10">
+                        <i class="fab fa-whatsapp text-gold-400"></i> Falar conosco
+                    </a>
+                </div>
+                <div class="flex items-center gap-6 mt-10 reveal">
+                    <div class="flex items-center gap-2">
+                        <div class="flex text-gold-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="text-sm text-gray-300">5.0 no Google</span>
+                    </div>
+                    <div class="text-sm text-gray-300"><i class="fas fa-map-marker-alt text-gold-400 mr-2"></i>Tanabi – SP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contadores -->
+    <section class="py-16 relative">
+        <div class="container mx-auto px-4">
+            <div class="glass rounded-3xl p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <p class="text-5xl md:text-6xl display text-gold-400" data-counter="22" data-suffix=" anos">0</p>
+                    <p class="text-sm mt-2 text-gray-300">De história</p>
+                </div>
+                <div class="reveal">
+                    <p class="text-5xl md:text-6xl display text-gold-400" data-counter="300" data-suffix="+">0</p>
+                    <p class="text-sm mt-2 text-gray-300">Membros ativos</p>
+                </div>
+                <div class="reveal">
+                    <p class="text-5xl md:text-6xl display text-gold-400" data-counter="15" data-suffix="+">0</p>
+                    <p class="text-sm mt-2 text-gray-300">Ministérios</p>
+                </div>
+                <div class="reveal">
+                    <p class="text-5xl md:text-6xl display text-gold-400" data-counter="5" data-suffix=".0">0</p>
+                    <p class="text-sm mt-2 text-gray-300">Avaliação Google</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal-left">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 gold-gradient rounded-3xl opacity-20"></div>
+                        <img src="batismo.jpg" alt="Batismo" class="rounded-[2rem] shadow-2xl w-full h-[500px] object-cover">
+                        <div class="absolute -bottom-6 -right-6 glass rounded-2xl p-5">
+                            <p class="display font-bold text-white text-lg">22 anos</p>
+                            <p class="text-xs text-gold-400">De fé e propósito</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <span class="text-xs font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 block">Sobre nós</span>
+                    <h2 class="text-4xl md:text-5xl display font-bold text-white mb-6 leading-tight">
+                        Uma igreja para <span class="gradient-text">pertencer</span>
+                    </h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        A <strong class="text-gold-400">Primeira Igreja Batista de Tanabi</strong> é mais que um lugar de culto — é uma família. Há 22 anos, temos sido um refúgio de fé, esperança e comunhão para centenas de pessoas em Tanabi e região.
+                    </p>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Não negociamos nossos valores. Pregamos a Palavra com fidelidade, adoramos com sinceridade e servimos com amor. Aqui, você encontrará um lugar para crescer espiritualmente e servir ao próximo.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-night-900 flex-shrink-0"><i class="fas fa-book-bible"></i></div>
+                            <div><p class="font-semibold text-white text-sm">Palavra fiel</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-night-900 flex-shrink-0"><i class="fas fa-hands-praying"></i></div>
+                            <div><p class="font-semibold text-white text-sm">Adoração verdadeira</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-night-900 flex-shrink-0"><i class="fas fa-people-group"></i></div>
+                            <div><p class="font-semibold text-white text-sm">Comunhão real</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-night-900 flex-shrink-0"><i class="fas fa-heart"></i></div>
+                            <div><p class="font-semibold text-white text-sm">Amor ao próximo</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Versículo destaque -->
+    <section class="py-16 relative verse-bg">
+        <div class="container mx-auto px-4 text-center">
+            <p class="display text-3xl md:text-5xl text-white italic max-w-4xl mx-auto leading-relaxed reveal">
+                "Deus é Espírito, e importa que os que o adoram o adorem em espírito e em verdade."
+            </p>
+            <p class="text-gold-400 mt-6 font-semibold tracking-widest reveal">— JOÃO 4:24</p>
+        </div>
+    </section>
+
+    <!-- Cultos -->
+    <section id="cultos" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 block">Programação</span>
+                <h2 class="text-4xl md:text-6xl display font-bold text-white mb-6">Nossos <span class="gradient-text">cultos</span></h2>
+                <p class="text-gray-300 max-w-xl mx-auto">Venha adorar conosco. Você é muito bem-vindo!</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-sun"></i></div>
+                    <h3 class="text-2xl display font-bold text-white mb-2">Culto de Celebração</h3>
+                    <p class="text-gold-400 font-semibold mb-4">Domingo · 20h</p>
+                    <p class="text-gray-300 text-sm leading-relaxed">O principal culto da semana. Louvor, Palavra e comunhão. Traga sua família!</p>
+                </div>
+
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-fire"></i></div>
+                    <h3 class="text-2xl display font-bold text-white mb-2">Terça Plena</h3>
+                    <p class="text-gold-400 font-semibold mb-4">Terça · 20h</p>
+                    <p class="text-gray-300 text-sm leading-relaxed">Uma noite de busca pela presença de Deus. Oração, adoração e ministração.</p>
+                </div>
+
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-book-bible"></i></div>
+                    <h3 class="text-2xl display font-bold text-white mb-2">Escola Bíblica</h3>
+                    <p class="text-gold-400 font-semibold mb-4">Sábado · 09h às 17h</p>
+                    <p class="text-gray-300 text-sm leading-relaxed">Estudo aprofundado da Palavra de Deus para todas as idades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministérios -->
+    <section id="ministerios" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 block">Ministérios</span>
+                <h2 class="text-4xl md:text-6xl display font-bold text-white mb-6">Encontre seu <span class="gradient-text">lugar</span></h2>
+                <p class="text-gray-300 max-w-xl mx-auto">Cada pessoa tem um dom. Encontre o ministério onde você pode servir.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-music"></i></div>
+                    <h3 class="text-xl display font-bold text-white mb-3">Louvor & Adoração</h3>
+                    <p class="text-gray-400 text-sm">Ministério de música que conduz a igreja à presença de Deus.</p>
+                </div>
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-child"></i></div>
+                    <h3 class="text-xl display font-bold text-white mb-3">Infantil</h3>
+                    <p class="text-gray-400 text-sm">Ensino bíblico lúdico e amoroso para as crianças da igreja.</p>
+                </div>
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-fire-flame-curved"></i></div>
+                    <h3 class="text-xl display font-bold text-white mb-3">Jovens</h3>
+                    <p class="text-gray-400 text-sm">Encontros, discipulado e comunhão para a juventude.</p>
+                </div>
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3 class="text-xl display font-bold text-white mb-3">Mulheres</h3>
+                    <p class="text-gray-400 text-sm">Círculo de oração, estudos e encontros de mulheres.</p>
+                </div>
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-users"></i></div>
+                    <h3 class="text-xl display font-bold text-white mb-3">Homens</h3>
+                    <p class="text-gray-400 text-sm">Comunhão, discipulado e serviço entre os irmãos.</p>
+                </div>
+                <div class="card-3d glass rounded-3xl p-8 reveal">
+                    <div class="w-16 h-16 rounded-2xl gold-gradient flex items-center justify-center text-night-900 text-2xl mb-6"><i class="fas fa-house-chimney"></i></div>
+                    <h3 class="text-xl display font-bold text-white mb-3">Células</h3>
+                    <p class="text-gray-400 text-sm">Grupos pequenos que se reúnem nas casas durante a semana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 block">Galeria</span>
+                <h2 class="text-4xl md:text-6xl display font-bold text-white mb-6">Momentos <span class="gradient-text">inesquecíveis</span></h2>
+                <p class="text-gray-300 max-w-xl mx-auto">Registros de cultos, batismos e eventos especiais.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <div class="gallery-item rounded-3xl col-span-2 row-span-2 reveal">
+                    <img src="adoracao.jpg" alt="Adoração" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl reveal">
+                    <img src="batismo.jpg" alt="Batismo" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl reveal">
+                    <img src="musico.jpg" alt="Louvor" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl reveal">
+                    <img src="batismo.jpg" alt="Batismo" class="w-full h-full object-cover">
+                </div>
+                <div class="gallery-item rounded-3xl reveal">
+                    <img src="musico.jpg" alt="Louvor" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 block">Testemunhos</span>
+                <h2 class="text-4xl md:text-6xl display font-bold text-white mb-6">Vidas <span class="gradient-text">transformadas</span></h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass rounded-3xl p-8 reveal">
+                    <div class="text-gold-400 text-4xl mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-300 italic mb-6 leading-relaxed">"Encontrei na PIB Tanabi uma família. Aqui minha vida foi transformada pela Palavra de Deus."</p>
+                    <p class="text-gold-400 font-semibold text-sm">— Irmã Maria</p>
+                </div>
+                <div class="glass rounded-3xl p-8 reveal">
+                    <div class="text-gold-400 text-4xl mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-300 italic mb-6 leading-relaxed">"O ministério de louvor me ensinou a adorar em espírito e verdade. Sou grato a Deus pela PIB."</p>
+                    <p class="text-gold-400 font-semibold text-sm">— Irmão João</p>
+                </div>
+                <div class="glass rounded-3xl p-8 reveal">
+                    <div class="text-gold-400 text-4xl mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-300 italic mb-6 leading-relaxed">"Meus filhos cresceram no ministério infantil. Hoje servem ao Senhor com alegria."</p>
+                    <p class="text-gold-400 font-semibold text-sm">— Irmã Ana</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 relative">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 block">Dúvidas</span>
+                <h2 class="text-4xl md:text-6xl display font-bold text-white mb-6">Perguntas <span class="gradient-text">frequentes</span></h2>
+            </div>
+            <div class="space-y-4">
+                <div class="accordion-item glass rounded-2xl overflow-hidden reveal">
+                    <button class="w-full flex items-center justify-between p-6 text-left">
+                        <span class="font-semibold text-white">Posso visitar a igreja sem avisar?</span>
+                        <i class="fas fa-chevron-down text-gold-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-300">Com certeza! Nossos cultos são abertos a todos. Venha como estiver — você será muito bem-vindo.</p>
+                    </div>
+                </div>
+                <div class="accordion-item glass rounded-2xl overflow-hidden reveal">
+                    <button class="w-full flex items-center justify-between p-6 text-left">
+                        <span class="font-semibold text-white">O que devo vestir?</span>
+                        <i class="fas fa-chevron-down text-gold-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-300">Não existe dress code. Venha com o que você se sentir confortável. Aqui ninguém julga ninguém.</p>
+                    </div>
+                </div>
+                <div class="accordion-item glass rounded-2xl overflow-hidden reveal">
+                    <button class="w-full flex items-center justify-between p-6 text-left">
+                        <span class="font-semibold text-white">Tem culto para crianças?</span>
+                        <i class="fas fa-chevron-down text-gold-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-300">Sim! Temos ministério infantil com ensino bíblico adaptado para cada faixa etária durante os cultos.</p>
+                    </div>
+                </div>
+                <div class="accordion-item glass rounded-2xl overflow-hidden reveal">
+                    <button class="w-full flex items-center justify-between p-6 text-left">
+                        <span class="font-semibold text-white">Como faço para me batizar?</span>
+                        <i class="fas fa-chevron-down text-gold-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-300">Fale com um dos pastores ou líderes após o culto. Realizamos batismos periodicamente e preparamos você com uma classe batismal.</p>
+                    </div>
+                </div>
+                <div class="accordion-item glass rounded-2xl overflow-hidden reveal">
+                    <button class="w-full flex items-center justify-between p-6 text-left">
+                        <span class="font-semibold text-white">Como faço para contribuir com dízimos e ofertas?</span>
+                        <i class="fas fa-chevron-down text-gold-400 accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="px-6 pb-6 text-gray-300">Você pode contribuir presencialmente nos cultos ou via Pix. Entre em contato conosco pelo WhatsApp para mais informações.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pedido de Oração -->
+    <section class="py-24 relative verse-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center reveal">
+                <span class="text-xs font-bold tracking-[0.3em] text-gold-300 uppercase mb-4 block">Pedido de Oração</span>
+                <h2 class="text-4xl md:text-5xl display font-bold text-white mb-6">Podemos orar por você?</h2>
+                <p class="text-gray-200 mb-10 text-lg">Compartilhe seu pedido e nossa equipe de intercessão orará por você durante a semana.</p>
+
+                <form id="prayer-form" class="glass rounded-3xl p-8 text-left">
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-white mb-2">Seu nome *</label>
+                            <input type="text" id="prayer-nome" required class="w-full px-5 py-4 rounded-2xl border border-white/20 focus:border-gold-400 outline-none transition bg-white/5 text-white placeholder-gray-400" placeholder="Como podemos te chamar?">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-white mb-2">Telefone (opcional)</label>
+                            <input type="tel" id="prayer-tel" placeholder="(17) 99999-9999" class="w-full px-5 py-4 rounded-2xl border border-white/20 focus:border-gold-400 outline-none transition bg-white/5 text-white placeholder-gray-400">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold text-white mb-2">Seu pedido de oração *</label>
+                        <textarea id="prayer-msg" rows="5" required class="w-full px-5 py-4 rounded-2xl border border-white/20 focus:border-gold-400 outline-none transition bg-white/5 text-white placeholder-gray-400 resize-none" placeholder="Compartilhe seu pedido..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full gold-gradient text-night-900 font-bold py-5 rounded-2xl transition shadow-xl glow-btn inline-flex items-center justify-center gap-3 hover:scale-[1.02]">
+                        <i class="fas fa-hands-praying"></i> Enviar pedido de oração
+                    </button>
+                    <p class="text-xs text-gray-400 text-center mt-4"><i class="fas fa-lock text-gold-400 mr-1"></i> Seu pedido será tratado com sigilo.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-24 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <span class="text-xs font-bold tracking-[0.3em] text-gold-400 uppercase mb-4 block">Contato</span>
+                <h2 class="text-4xl md:text-6xl display font-bold text-white mb-6">Venha nos <span class="gradient-text">visitar</span></h2>
+                <p class="text-gray-300">Estamos prontos para te receber de braços abertos.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+                <div class="lg:col-span-2 space-y-4 reveal">
+                    <a href="https://wa.me/5517997125718" target="_blank" class="flex items-start gap-4 p-6 glass rounded-2xl hover:border-gold-400/50 transition border border-white/10">
+                        <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-night-900 flex-shrink-0"><i class="fab fa-whatsapp text-2xl"></i></div>
+                        <div><p class="text-xs font-semibold text-gold-400 uppercase">WhatsApp</p><p class="font-semibold text-white mt-1">(17) 99712-5718</p></div>
+                    </a>
+                    <div class="flex items-start gap-4 p-6 glass rounded-2xl border border-white/10">
+                        <div class="w-14 h-14 rounded-2xl bg-gold-400/20 flex items-center justify-center text-gold-400 flex-shrink-0"><i class="fas fa-map-marker-alt text-2xl"></i></div>
+                        <div><p class="text-xs font-semibold text-gold-400 uppercase">Endereço</p><p class="font-semibold text-white mt-1 text-sm">Av. Gildo Savatin, 430</p><p class="text-xs text-gray-400">Tanabi – SP · CEP 15170-000</p></div>
+                    </div>
+                    <div class="flex items-start gap-4 p-6 glass rounded-2xl border border-white/10">
+                        <div class="w-14 h-14 rounded-2xl bg-gold-400/20 flex items-center justify-center text-gold-400 flex-shrink-0"><i class="fas fa-clock text-2xl"></i></div>
+                        <div><p class="text-xs font-semibold text-gold-400 uppercase">Cultos</p><p class="font-semibold text-white mt-1 text-sm">Domingo · 20h</p><p class="text-xs text-gray-400">Sábado · 09h às 17h</p></div>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="lg:col-span-3 glass rounded-3xl p-8 border border-white/10 reveal">
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-white mb-2">Nome *</label>
+                            <input type="text" id="nome" required class="w-full px-5 py-4 rounded-2xl border border-white/10 focus:border-gold-400 outline-none transition bg-white/5 text-white placeholder-gray-500" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-white mb-2">Telefone *</label>
+                            <input type="tel" id="telefone" required placeholder="(17) 99999-9999" class="w-full px-5 py-4 rounded-2xl border border-white/10 focus:border-gold-400 outline-none transition bg-white/5 text-white placeholder-gray-500">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-semibold text-white mb-2">Assunto *</label>
+                        <select id="servico" required class="w-full px-5 py-4 rounded-2xl border border-white/10 focus:border-gold-400 outline-none transition bg-white/5 text-white">
+                            <option value="">Selecione</option>
+                            <option>Quero conhecer a igreja</option>
+                            <option>Quero me batizar</option>
+                            <option>Quero participar de um ministério</option>
+                            <option>Quero fazer parte de uma célula</option>
+                            <option>Preciso de aconselhamento pastoral</option>
+                            <option>Outro assunto</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold text-white mb-2">Mensagem</label>
+                        <textarea id="mensagem" rows="4" class="w-full px-5 py-4 rounded-2xl border border-white/10 focus:border-gold-400 outline-none transition bg-white/5 text-white placeholder-gray-500 resize-none" placeholder="Como podemos te ajudar?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full gold-gradient text-night-900 font-bold py-5 rounded-2xl transition shadow-xl glow-btn inline-flex items-center justify-center gap-3 hover:scale-[1.02]">
+                        <i class="fab fa-whatsapp text-xl"></i> Enviar mensagem
+                    </button>
+                    <p class="text-xs text-gray-400 text-center mt-4"><i class="fas fa-lock text-gold-400 mr-1"></i> Seus dados estão seguros.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="relative">
+        <div class="h-[400px] w-full">
+            <iframe src="https://www.google.com/maps?q=Av.+Gildo+Savatin,+430,+Tanabi,+SP&z=16&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="Localização PIB Tanabi"></iframe>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 gold-gradient"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <div class="text-night-900 text-5xl mb-6">✝</div>
+            <h2 class="text-4xl md:text-6xl display font-bold text-night-900 mb-6">Você é bem-vindo!</h2>
+            <p class="text-night-800 max-w-2xl mx-auto mb-10 text-lg font-semibold">Nosso próximo culto é domingo às 20h. Venha adorar conosco!</p>
+            <a href="https://wa.me/5517997125718?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20PIB%20Tanabi." target="_blank" class="inline-flex items-center gap-3 bg-night-900 text-gold-400 font-bold px-10 py-5 rounded-full transition shadow-2xl hover:scale-105">
+                <i class="fab fa-whatsapp text-2xl"></i> Falar com a igreja
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-night-900 text-gray-400 py-16 border-t border-white/5">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-10 mb-10">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl gold-gradient flex items-center justify-center text-night-900 font-bold text-2xl">✝</div>
+                        <div>
+                            <p class="display text-white text-lg font-bold">PIB Tanabi</p>
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-gold-400">Primeira Igreja Batista</p>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed max-w-md">Somos uma igreja de adoradores vivos em espírito e verdade. Unidos em um só propósito, nossa adoração reflete o amor e a presença de Deus.</p>
+                </div>
+                <div>
+                    <h4 class="display text-white text-lg font-bold mb-5">Navegação</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#sobre" class="hover:text-gold-400 transition">Sobre</a></li>
+                        <li><a href="#cultos" class="hover:text-gold-400 transition">Cultos</a></li>
+                        <li><a href="#ministerios" class="hover:text-gold-400 transition">Ministérios</a></li>
+                        <li><a href="#galeria" class="hover:text-gold-400 transition">Galeria</a></li>
+                        <li><a href="#contato" class="hover:text-gold-400 transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="display text-white text-lg font-bold mb-5">Redes sociais</h4>
+                    <div class="flex gap-3">
+                        <a href="https://www.instagram.com/pibtanabioficial/" target="_blank" rel="noopener" class="w-11 h-11 rounded-2xl bg-white/5 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 flex items-center justify-center transition text-lg"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/PIBTanabi" target="_blank" rel="noopener" class="w-11 h-11 rounded-2xl bg-white/5 hover:bg-blue-600 flex items-center justify-center transition text-lg"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/5517997125718" target="_blank" class="w-11 h-11 rounded-2xl bg-white/5 hover:bg-green-500 flex items-center justify-center transition text-lg"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-gray-500">
+                <p>&copy; <span id="year"></span> Primeira Igreja Batista de Tanabi. Todos os direitos reservados.</p>
+                <p class="mt-2">Feito com <i class="fas fa-heart text-gold-500"></i> em Tanabi – SP · "Uma igreja para pertencer"</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp flutuante -->
+    <a href="https://wa.me/5517997125718?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20PIB%20Tanabi." target="_blank" rel="noopener"
+       class="fixed bottom-24 right-6 z-40 w-16 h-16 gold-gradient text-night-900 rounded-full flex items-center justify-center shadow-2xl transition hover:scale-110 animate-glow"
+       aria-label="WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Back to top -->
+    <button id="backTop" class="fixed bottom-6 right-6 z-40 w-14 h-14 glass text-white rounded-full flex items-center justify-center shadow-2xl border border-white/10" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-50 glass text-white px-4 py-5 shadow-2xl transform translate-y-full transition-transform duration-500 border-t border-white/10">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-gray-200 text-center md:text-left">
+                <i class="fas fa-cookie-bite text-gold-400 mr-2"></i>
+                Usamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa política.
+            </p>
+            <div class="flex gap-3">
+                <button id="cookieAccept" class="gold-gradient text-night-900 font-bold text-sm px-7 py-3 rounded-full transition">Aceitar</button>
+                <button id="cookieReject" class="bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-7 py-3 rounded-full transition">Recusar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => document.getElementById('loader').classList.add('hide'), 700);
+        });
+
+        // Ano
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Menu mobile
+        document.getElementById('menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Header scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+            document.getElementById('backTop').classList.toggle('show', window.scrollY > 600);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({ top: target.offsetTop - 90, behavior: 'smooth' });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+        // Contadores
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = +el.dataset.counter;
+                    const suffix = el.dataset.suffix || '';
+                    let current = 0;
+                    const step = Math.max(0.1, target / 60);
+                    const tick = () => {
+                        current += step;
+                        if (current >= target) { el.textContent = target + suffix; return; }
+                        el.textContent = Math.floor(current) + suffix;
+                        requestAnimationFrame(tick);
+                    };
+                    tick();
+                    counterObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+
+        // Accordion
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.querySelector('button').addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.accordion-item').forEach(o => {
+                    o.classList.remove('open');
+                    o.querySelector('.accordion-content').classList.remove('open');
+                });
+                if (!isOpen) {
+                    item.classList.add('open');
+                    item.querySelector('.accordion-content').classList.add('open');
+                }
+            });
+        });
+
+        // Máscara telefone
+        document.querySelectorAll('input[type="tel"]').forEach(telInput => {
+            telInput.addEventListener('input', (e) => {
+                let v = e.target.value.replace(/\D/g,'').slice(0,11);
+                if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+                else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+                else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,5}).*/, '($1) $2');
+                e.target.value = v;
+            });
+        });
+
+        // Formulário de contato
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value;
+            const servico = document.getElementById('servico').value;
+            const mensagem = document.getElementById('mensagem').value.trim();
+            if (!nome || !telefone || !servico) { alert('Preencha todos os campos obrigatórios!'); return; }
+            const texto = `Olá! Meu nome é *${nome}*.\n\n📞 Telefone: ${telefone}\n✝ Assunto: *${servico}*` +
+                          (mensagem ? `\n\n💬 ${mensagem}` : '') +
+                          `\n\n_Mensagem enviada pelo site da PIB Tanabi._`;
+            window.open(`https://wa.me/5517997125718?text=${encodeURIComponent(texto)}`, '_blank');
+        });
+
+        // Pedido de oração
+        document.getElementById('prayer-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nome = document.getElementById('prayer-nome').value.trim();
+            const tel = document.getElementById('prayer-tel').value;
+            const msg = document.getElementById('prayer-msg').value.trim();
+            if (!nome || !msg) { alert('Por favor, preencha seu nome e o pedido.'); return; }
+            const texto = `🙏 *PEDIDO DE ORAÇÃO*\n\n*Nome:* ${nome}` +
+                          (tel ? `\n*Telefone:* ${tel}` : '') +
+                          `\n\n*Pedido:*\n${msg}`;
+            window.open(`https://wa.me/5517997125718?text=${encodeURIComponent(texto)}`, '_blank');
+        });
+
+        // Back to top
+        document.getElementById('backTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Cookie
+        const cookieBanner = document.getElementById('cookieBanner');
+        if (!localStorage.getItem('pib-cookie')) setTimeout(() => cookieBanner.classList.remove('translate-y-full'), 2000);
+        const setCookie = (v) => { localStorage.setItem('pib-cookie', v); cookieBanner.classList.add('translate-y-full'); };
+        document.getElementById('cookieAccept').addEventListener('click', () => setCookie('aceito'));
+        document.getElementById('cookieReject').addEventListener('click', () => setCookie('recusado'));
+    </script>
+</body>
+</html>
